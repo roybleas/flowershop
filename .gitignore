@@ -36,7 +36,7 @@ build/
 
 
 #ultra edit project file
-*.pui
+*.prj
 *.ROY-PC.Roy.pui
 
 #my workfile
