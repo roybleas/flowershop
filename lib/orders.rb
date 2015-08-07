@@ -46,7 +46,7 @@ class Lineitem
   
   def initialize(orderline) 
     @orderline = orderline.upcase  
-    if self.valid?
+    if valid?
       order = @orderline.split  
       @qty = order[0].to_i
       @code = order[1]

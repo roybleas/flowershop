@@ -31,7 +31,7 @@ describe Orders do
 			end
 			it "with multiple rows" do
 				orderline = ["15 L09"]
-				expect{subject.read_order(orderline)}.to output(" 15 L09 $41.90\n      1 x  9 $24.95\n      1 x  6 $16.95\n").to_stdout 
+				expect{subject.read_order(orderline)}.to output(" 15 L09 $41.90\n      1 x  9 $24.95\n      1 x  6 $16.95\n\n").to_stdout 
 			end
 		end
 		context "multiple order items" do
