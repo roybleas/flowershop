@@ -34,6 +34,7 @@ class Orders
 		productitem.bundles.each do |bundle| 
 			printf "%7d x %2d $%.2f\n", bundle.count, bundle.size, bundle.price unless bundle.count == 0
 		end
+		print "\n"
 	end
 	
 end
