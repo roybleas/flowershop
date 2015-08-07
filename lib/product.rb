@@ -44,7 +44,7 @@ end
 
 class ProductFactory
 
-	def product(code)
+	def self.product(code)
 		code.upcase!
 		begin
 			product = self.class.const_get("Product#{code}").new

@@ -1,6 +1,6 @@
 # Orders 
 # Used to process the orders request
-require_relative( 'product')
+require_relative( 'productcodes')
 
 class Orders 
 	
@@ -22,7 +22,7 @@ class Orders
 	private
 	
 	def product(productcode)
-		productitem = ProductFactory.new.product(productcode)
+		productitem = ProductFactory.product(productcode)
 		if productitem.nil?
 			printf "Invalid order item: Unknown product code: %s",productcode 
 		end

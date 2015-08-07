@@ -31,24 +31,24 @@ end
 describe ProductFactory do
 	context "creates class for Product Code"
 	it "R12" do
-		expect(subject.product("R12")).to be_a(ProductR12)
+		expect(ProductFactory.product("R12")).to be_a(ProductR12)
 	end
 	
 	it "L09" do
-		expect(subject.product("L09")).to be_a(ProductL09)
+		expect(ProductFactory.product("L09")).to be_a(ProductL09)
 	end
 	
 	it "T58 " do
-		expect(subject.product("T58")).to be_a(ProductT58)
+		expect(ProductFactory.product("T58")).to be_a(ProductT58)
 	end
 	
 	it "case insensitive" do
-		expect(subject.product("r12")).to be_a(ProductR12)
+		expect(ProductFactory.product("r12")).to be_a(ProductR12)
 	end
 	
 	context "unknown code" do
-		it "returns nil" do		
-			expect(subject.product("Q12")).to be_nil
+		it "returns nil" do	
+			expect(ProductFactory.product("Q12")).to be_nil	
 		end
 	end
 	
