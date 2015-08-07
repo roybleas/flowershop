@@ -14,13 +14,15 @@ class Orders
 					print_order_item(productitem)
 				end
 			else
-				printf "Invalid order item: %s",orderline
+				printf "Invalid order item: %s\n",orderline
 			end
 		end
 	end
 	
+	private
+	
 	def product(productcode)
-		productitem = ProductFactory.new(productcode)
+		productitem = ProductFactory.new.product(productcode)
 		if productitem.nil?
 			printf "Invalid order item: Unknown product code: %s",productcode 
 		end
@@ -28,9 +30,9 @@ class Orders
 	end
 	
 	def print_order_item(productitem)
-		printf "%3d %s $%.2f",productitem.qty, productitem.code, productitem.totalcost
+		printf "%3d %s $%.2f\n",productitem.qty, productitem.code, productitem.total_cost
 		productitem.bundles.each do |bundle| 
-			printf "\t%3d x %2d $%.2f", bundle.count, bundle.size, bundle.price unless bundle.count == 0
+			printf "%7d x %2d $%.2f\n", bundle.count, bundle.size, bundle.price unless bundle.count == 0
 		end
 	end
 	
